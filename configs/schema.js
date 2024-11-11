@@ -23,9 +23,9 @@ export const CarListing=pgTable('carListing',{
     offerType:varchar('offerType'),
     listingDescription:varchar('listingDescription').notNull(),
     features:json('features'),
-    createdBy:varchar('createdBy').notNull().default('ldtestreinis@gmail.com'),
-    userName:varchar('userName').notNull().default('Reinis'),
-    userImageUrl:varchar('userImageUrl').default('https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/3_avatar-512.png'),
+    createdBy:varchar('createdBy').notNull(),
+    userName:varchar('userName').notNull(),
+    userImageUrl:varchar('userImageUrl'),
     postedOn:varchar('postedOn'),
 })
 

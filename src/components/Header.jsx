@@ -3,7 +3,7 @@ import { UserButton, useUser } from '@clerk/clerk-react';
 import { Button } from './ui/button'
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
-// import { SignInButton } from '@clerk/clerk-react'
+import { SignInButton } from '@clerk/clerk-react'
 
 function Header() {
 
@@ -28,7 +28,7 @@ function Header() {
         </SignInButton>
         </div> */}
 
-        {isSignedIn?
+        {isSignedIn? (
             <div className='flex items-center gap-5'>
                 <UserButton/>
                 <Link to={'/profile'}>
@@ -36,11 +36,11 @@ function Header() {
                 </Link>
                 
             </div>
-            :
-            <Link to={'/profile'}>
+        ) : ( 
+            <SignInButton mode='modal' forceRedirectUrl='/profile'>
                 <Button>Submit Listing</Button>
-            </Link>
-        }
+            </SignInButton>
+        )}
     </div>
   )
 }
